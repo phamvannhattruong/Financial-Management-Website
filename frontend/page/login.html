@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>Login — Financial Management</title>
+</head>
+<body>
+  <main class="login-container">
+    <section class="login-card">
+      <div class="brand">
+        <div class="logo">FM</div>
+        <span class="brand-name">Financial Manager</span>
+      </div>
+
+      <h1>Welcome back</h1>
+      <p class="lead">Sign in to continue to your dashboard</p>
+
+      <form class="login-form" action="/login" method="post" novalidate>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+
+        <label for="password">Password</label>
+        <div class="password-wrap">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            required
+          />
+          <button type="button" class="toggle-pw">👁</button>
+        </div>
+
+        <div class="form-row">
+          <label class="remember">
+            <input type="checkbox" name="remember" /> Remember me
+          </label>
+          <a class="forgot" href="#">Forgot password?</a>
+        </div>
+
+        <button class="btn primary" type="submit">Sign in</button>
+      </form>
+
+      <p class="signup">
+        Don’t have an account?
+        <a href="#">Sign up</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
