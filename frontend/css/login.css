@@ -131,12 +131,18 @@ input:focus {
   margin-right: 5px;
 }
 
-.forgot {
+.forgot-link {
+  background: none;
+  border: none;
   color: #4f46e5;
-  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 1rem;
 }
 
-.forgot:hover {
+.forgot-link:hover {
   text-decoration: underline;
 }
 
@@ -186,3 +192,4 @@ input:focus {
 .signup-link:hover {
   color: #4338ca;
 }
+
