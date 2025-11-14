@@ -31,12 +31,4 @@ document.addEventListener("DOMContentLoaded", () => {
       // window.location.href = "../index.html";
     });
   }
-
-  // Chuyển sang trang đăng ký
-  const signupBtn = document.getElementById("signupBtn");
-  if (signupBtn) {
-    signupBtn.addEventListener("click", () => {
-      window.location.href = "register.html";
-    });
-  }
 });
