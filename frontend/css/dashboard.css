@@ -1,0 +1,369 @@
+:root {
+    --bg-purple: #9b51e0;
+    --sidebar-bg: #263544;
+    /* Màu nền Sidebar tối */
+    --sidebar-active: #007bff;
+    /* Màu xanh active */
+    --accent-blue: #4285F4;
+    --text-dark: #333;
+    --text-gray: #666;
+    --border-radius-lg: 30px;
+    --border-radius-md: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-purple);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* CONTAINER CHÍNH: Giờ sẽ dùng Flexbox để chia đôi (Sidebar - Content) */
+.dashboard-container {
+    display: flex;
+    /* Quan trọng: Xếp ngang */
+    background-color: white;
+    width: 100%;
+    max-width: 1400px;
+    min-height: 85vh;
+    /* Tăng chiều cao chút cho đẹp */
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    /* Để bo góc cắt gọn nội dung bên trong */
+}
+
+/* --- PHẦN SIDEBAR MỚI THÊM VÀO --- */
+.sidebar {
+    width: 260px;
+    /* Chiều rộng cố định */
+    background-color: var(--sidebar-bg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    flex-shrink: 0;
+    /* Không bị co lại khi màn hình nhỏ */
+}
+
+.logo {
+    padding: 0 30px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu {
+    list-style: none;
+    flex-grow: 1;
+    /* Đẩy nút đăng xuất xuống đáy */
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    color: #b0b8c1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+/* Trạng thái Active (Đang chọn) */
+.menu li a.active {
+    background-color: var(--sidebar-active);
+    color: white;
+    border-left: 4px solid white;
+    /* Điểm nhấn nhỏ bên trái */
+}
+
+.menu li a i {
+    width: 25px;
+    font-size: 16px;
+}
+
+.logout-btn {
+    padding: 0 30px;
+    margin-top: auto;
+}
+
+.logout-btn a {
+    color: #b0b8c1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.logout-btn a:hover {
+    color: #fff;
+}
+
+
+/* --- PHẦN NỘI DUNG CHÍNH (BÊN PHẢI) --- */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #fcfcfc;
+    /* Màu nền trắng hơi xám nhẹ cho dịu mắt */
+    overflow-y: auto;
+    /* Cho phép cuộn nếu nội dung dài */
+}
+
+/* Các style cũ giữ nguyên bên dưới */
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: var(--text-dark);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.header p {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr;
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    height: 100%;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.chart-placeholder {
+    background-color: #f8f9fa;
+    border: 2px dashed #ddd;
+    border-radius: var(--border-radius-md);
+    height: 350px;
+    /* Fix chiều cao cho đẹp */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+}
+
+.right-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wallets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.wallet-item {
+    text-align: center;
+    padding: 15px 5px;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    transition: transform 0.2s;
+    background: white;
+}
+
+.wallet-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.wallet-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.icon-cash {
+    background-color: #2ecc71;
+}
+
+.icon-bank {
+    background-color: #3498db;
+}
+
+.icon-momo {
+    background-color: #e91e63;
+}
+
+.wallet-amount {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-top: 5px;
+}
+
+.budget-item {
+    margin-bottom: 15px;
+}
+
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.fill-blue {
+    background-color: #4285F4;
+    width: 80%;
+}
+
+.fill-sky {
+    background-color: #3498db;
+    width: 33%;
+}
+
+.fill-red {
+    background-color: #e74c3c;
+    width: 100%;
+}
+
+.ai-suggestions {
+    background-color: #fff8e1;
+    border: 1px solid #ffe0b2;
+    position: relative;
+}
+
+.ai-icon-float {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--accent-blue);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(66, 133, 244, 0.4);
+}
+
+.suggestion-list {
+    list-style: none;
+}
+
+.suggestion-list li {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.bulb-icon {
+    color: #f1c40f;
+    min-width: 15px;
+    margin-top: 2px;
+}
+
+.footer-actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.btn-export {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .menu {
+        display: none;
+        /* Ẩn menu trên mobile cho gọn demo */
+    }
+
+    .logout-btn {
+        display: none;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}

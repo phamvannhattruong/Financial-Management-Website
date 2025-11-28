@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Finance Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..\css\dashboard.css">
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-wallet"></i> AI Finance
+            </div>
+
+            <ul class="menu">
+                <li><a href="#" class="active"><i class="fa-solid fa-gauge-high"></i> Tổng quan</a></li>
+                <li><a href="#"><i class="fa-solid fa-money-bill-transfer"></i> Giao dịch</a></li>
+                <li><a href="#"><i class="fa-solid fa-piggy-bank"></i> Ngân sách</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Báo cáo</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+                <li><a href="#"><i class="fa-solid fa-database"></i> Nền tảng</a></li>
+            </ul>
+
+            <div class="logout-btn">
+                <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Chào mừng trở lại, [Tên Người Dùng]!</h1>
+                <p>Đây là bức tranh tài chính của bạn hôm nay.</p>
+            </header>
+
+            <div class="main-grid">
+                
+                <div class="card chart-section">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h2 class="card-title" style="margin:0;">Tổng quan Thu Chi</h2>
+                        <button style="background: white; border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; font-size: 12px; cursor: pointer;">
+                            WEEK &nbsp; <span style="font-weight:bold; color: var(--accent-blue)">MONTH</span> &nbsp; YEAR
+                        </button>
+                    </div>
+                    <div class="chart-placeholder">
+                        [Biểu đồ JavaScript]
+                    </div>
+                </div>
+
+                <div class="right-sidebar">
+                    <div class="card">
+                        <h3 class="card-title">Số dư các ví</h3>
+                        <div class="wallets-grid">
+                            <div class="wallet-item">
+                                <div class="wallet-icon icon-cash"><i class="fa-solid fa-wallet"></i></div>
+                                <div class="wallet-amount">5.0tr ₫</div>
+                            </div>
+                            <div class="wallet-item">
+                                <div class="wallet-icon icon-bank"><i class="fa-solid fa-building-columns"></i></div>
+                                <div class="wallet-amount">25.5tr ₫</div>
+                            </div>
+                            <div class="wallet-item">
+                                <div class="wallet-icon icon-momo"><i class="fa-solid fa-mobile-screen"></i></div>
+                                <div class="wallet-amount">1.2tr ₫</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Tiến độ Ngân sách</h3>
+                        <div class="budget-item">
+                            <div class="budget-header"><span>Ăn uống</span><span>80%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill fill-blue"></div></div>
+                        </div>
+                        <div class="budget-item">
+                            <div class="budget-header"><span>Giải trí</span><span style="color:#e74c3c">110%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill fill-red"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="card ai-suggestions">
+                        <h3 class="card-title">AI Gợi ý</h3>
+                        <ul class="suggestion-list">
+                            <li><i class="fa-solid fa-lightbulb bulb-icon"></i> Bạn đang chi quá tay cho cafe.</li>
+                            <li><i class="fa-solid fa-lightbulb bulb-icon"></i> Có khoản hoàn tiền chưa nhận.</li>
+                        </ul>
+                        <div class="ai-icon-float"><i class="fa-solid fa-robot"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-actions">
+                <button class="btn-export">Xuất báo cáo</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
