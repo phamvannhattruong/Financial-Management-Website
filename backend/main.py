@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from routers import login, wallet
+from routers import login, wallet, budget, ai_advice, stats, report
 
 app = FastAPI()
 
@@ -25,23 +25,20 @@ app.add_middleware(
 
 app.include_router(login.router)
 app.include_router(wallet.router)
-
+app.include_router(budget.router)
+app.include_router(ai_advice.router)
+app.include_router(stats.router)
+app.include_router(report.router)
 # --- XỬ LÝ GIAO DIỆN HTML ---
 
 @app.get("/")
 async def read_root():
-    # SỬA: Phải thêm "/page/" vào đây vì login.html nằm trong đó
     return FileResponse(os.path.join(frontend_dir, "page", "login.html"))
 
 @app.get("/dashboard")
 async def show_dashboard():
-    # SỬA: Tương tự, thêm "/page/" vào đây
     return FileResponse(os.path.join(frontend_dir, "page", "dashboard.html"))
 
-# --- MOUNT STATIC FILES ---
-# Khi trỏ vào frontend_dir (thư mục cha), URL sẽ khớp như sau:
-# /css/style.css  --> frontend/css/style.css
-# /scripts/main.js --> frontend/scripts/main.js
 app.mount("/", StaticFiles(directory=frontend_dir), name="frontend")
 
 if __name__ == "__main__":
